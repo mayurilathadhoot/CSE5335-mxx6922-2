@@ -28,14 +28,8 @@ for ($i=1; $i<=9; $i++)
 $result = pg_query($dbconn, "INSERT INTO friends 
                   VALUES( '$imbdid', '$title', $imbdrating  );");
 //dump the result object
-//var_dump($result);
+var_dump($result);
 }
-}
-$result = pg_query($dbconn, "select title, imbdrating from friends where imbdrating = 8.5")
-or die("Error in query: $result." . pg_last_error($dbconn));
-	
-while ($row = pg_fetch_row($result)){
-  echo "title: $row[0] \n imbdrating: $row[1]\n";
 }
 // Closing connection
 pg_close($dbconn);
