@@ -33,7 +33,7 @@ $seedData = array(
  * Standard single-node URI format: 
  * mongodb://[username:password@]host:port/[database]
  */
-$uri = "mongodb://<heroku_bb3t4334>:<webdata23>@ds055584.mongolab.com:55584/heroku_bb3t4334";
+$uri = "mongodb://heroku_bb3t4334:88bbb7cpgigo7pv0pler7tqgu2@ds055584.mongolab.com:55584/heroku_bb3t4334";
 $options = array("connectTimeoutMS" => 30000);
 /*
  * Include the replica set name as an option for a multi-node replica set connection:
