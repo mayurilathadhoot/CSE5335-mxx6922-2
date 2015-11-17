@@ -1,5 +1,5 @@
 <?php
-/
+
 // Connecting, selecting database
 $dbconn = pg_connect("host=ec2-107-21-223-147.compute-1.amazonaws.com dbname=d43brbvbt6ugl9 user=ywhsrpfxdaknkl password=dnYTje6Tvi_vDyGq9Z1Qsf5yhY")
         or die('Could not connect: ' . pg_last_error());
