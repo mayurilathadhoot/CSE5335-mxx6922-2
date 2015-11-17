@@ -15,12 +15,6 @@ echo $line;
 if($line==$imbdid)
 {
 $result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
-}
-else
-{
-$result = pg_query($dbconn, "select title, imbdrating from friends");	
-}
-
 while ($row = pg_fetch_row($result)){
   echo "title: $row[0] \n imbdrating: $row[1]\n";
  // echo "<br />\n";
@@ -29,6 +23,20 @@ while ($row = pg_fetch_row($result)){
 
 
 }
+}
+else
+{
+$result = pg_query($dbconn, "select title, imbdrating from friends");	
+while ($row = pg_fetch_row($result)){
+  echo "title: $row[0] \n imbdrating: $row[1]\n";
+ // echo "<br />\n";
+//dump the result object
+//var_dump($row);
+
+
+}}
+
+
 
 // Closing connection
 pg_close($dbconn);
