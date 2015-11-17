@@ -12,7 +12,7 @@ echo "Please enter imbdid : ";
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
 echo $line;
-if($line===$imbdid)
+if($line===imbdid)
 {
 $result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
