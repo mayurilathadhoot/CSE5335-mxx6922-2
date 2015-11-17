@@ -26,9 +26,9 @@ while ($row = pg_fetch_row($result)){
 }
 else
 {
-$result = pg_query($dbconn, "select title, imbdrating from friends");	
+$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends");	
 while ($row = pg_fetch_row($result)){
-  echo "title: $row[0] \n imbdrating: $row[1]\n";
+  echo "imbdid: $row[0] --- title: $row[1] --- imbdrating: $row[2]\n";
  // echo "<br />\n";
 //dump the result object
 //var_dump($row);
