@@ -15,35 +15,20 @@ $line = str_replace("\r", "", $line);
 $x="'".$line."'";
 if($x)
 {
+	if($x === imbdid){
 	echo $x;
-
-//$query = "select title, imbdrating from friends where imbdid = '". $line. "';";
-//$sql = sprintf(
-  // "SELECT title, imbdrating FROM friends WHERE imbdid = '%s'", $line
-//);  
-//echo $query;
-$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x");
-//$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
-while ($row = pg_fetch_row($result)){
-  echo "title: $row[1] \n imbdrating: $row[2]\n";
- // echo "<br />\n";
-//dump the result object
-//var_dump($row);
-
-
-}
+	$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x ");
+	while ($row = pg_fetch_row($result)){
+    echo "title: $row[0] \n imbdrating: $row[1]\n";}
 }
 else 
 {
 $result = pg_query($dbconn, "select title, imbdrating from friends");	
 while ($row = pg_fetch_row($result)){
-  echo "title: $row[0] \n imbdrating: $row[1]\n";
- // echo "<br />\n";
-//dump the result object
-//var_dump($row);
+echo "title: $row[0] \n imbdrating: $row[1]\n";
 }
 }
-
+}
 
 
 // Closing connection
