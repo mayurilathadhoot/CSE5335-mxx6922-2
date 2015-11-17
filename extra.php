@@ -15,7 +15,7 @@ echo $line;
 if($line)
 {
 $query = "select title, imbdrating from friends where imbdid like '%". $line. "%';";
-echo $query
+echo $query;
 $result = pg_query($dbconn, $query);
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
