@@ -10,6 +10,7 @@ echo "Please enter imbdid : ";
 
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
+$line='.$line.';
 if($line)
 {
 	echo $line;
@@ -20,7 +21,7 @@ if($line)
 //);  
 //echo $query;
 
-$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = './'$line/'.'");
+$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = '$line'");
 
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
