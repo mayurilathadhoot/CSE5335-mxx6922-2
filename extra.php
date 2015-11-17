@@ -20,9 +20,7 @@ if($x)
   // "SELECT title, imbdrating FROM friends WHERE imbdid = '%s'", $line
 //);  
 //echo $query;
-
 $result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x");
-
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
   echo "title: $row[1] \n imbdrating: $row[2]\n";
