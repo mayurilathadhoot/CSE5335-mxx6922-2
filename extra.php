@@ -15,10 +15,9 @@ $line = str_replace("\r", "", $line);
 $x="'".$line."'";
 if($x)
 {
-	echo $x;
 	$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x ");
 	while ($row = pg_fetch_row($result)){
-    echo "title: $row[0] \n imbdrating: $row[1]\n";}
+    echo "Title: $row[0] --- imbdrating: $row[1]\n";}
 }
 // Closing connection
 pg_close($dbconn);
