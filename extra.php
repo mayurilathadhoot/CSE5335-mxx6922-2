@@ -19,10 +19,11 @@ $sql = sprintf(
    "SELECT title, imbdrating FROM friends WHERE imbdid = '%s'", $line
 );  
 //echo $query;
-$result = pg_query($dbconn, $sql);
+
+$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid = ".$line.";");
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
-  echo "title: $row[0] \n imbdrating: $row[1]\n";
+  echo "title: $row[1] \n imbdrating: $row[2]\n";
  // echo "<br />\n";
 //dump the result object
 //var_dump($row);
