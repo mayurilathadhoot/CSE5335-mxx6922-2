@@ -6,11 +6,11 @@ $dbconn = pg_connect("host=ec2-107-21-223-147.compute-1.amazonaws.com dbname=d43
 		
 header('Content-Type: application/javascript;');
 
-$result = pg_query($dbconn, "select title, imbdrating from friends where imbdrating = 8.5")
+$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends")
 or die("Error in query: $result." . pg_last_error($dbconn));
 	
 while ($row = pg_fetch_row($result)){
-  echo "title: $row[0] \n imbdrating: $row[1]\n";
+  echo "imbdid: $row[0] \n title: $row[1]\n imbdrating: $row[2]\n";
 }
 // Closing connection
 pg_close($dbconn);
