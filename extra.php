@@ -19,11 +19,11 @@ if (!empty($result)){
 	while ($row = pg_fetch_row($result)){
     echo "Title: $row[0] --- imbdrating: $row[1]\n";}}
 	else{
-		echo " please enter a correct imbdid";
+		echo " /n please enter a correct imbdid";
 	}
 }
 else{
-	echo "enter proper imbdid";
+	echo "/n enter proper imbdid";
 }
 // Closing connection
 pg_close($dbconn);
