@@ -11,16 +11,17 @@ header('Content-Type: application/javascript;');
 echo "Please enter imbdid : ";
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
-echo $line;
 if($line)
 {
+	echo $line;
+
 //$query = "select title, imbdrating from friends where imbdid = '". $line. "';";
 $sql = sprintf(
    "SELECT title, imbdrating FROM friends WHERE imbdid = '%s'", $line
 );  
 //echo $query;
 
-$result = pg_query($dbconn, "SELECT * FROM friends WHERE imdbid LIKE '%?%', $line");
+$result = pg_query($dbconn, "SELECT * FROM friends WHERE imdbid = '".$line."'");
 
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
