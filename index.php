@@ -8,7 +8,7 @@ $dbconn = pg_connect("host=ec2-107-21-223-147.compute-1.amazonaws.com dbname=d43
 		
 header('Content-Type: application/javascript;');
 
-for ($i=1; $i<=9; $i++)
+/*for ($i=1; $i<=9; $i++)
 {
 	$page = (file_get_contents("http://www.omdbapi.com/?t=friends&season=".$i));
 	$data = json_decode($page, true);
@@ -30,7 +30,7 @@ $result = pg_query($dbconn, "INSERT INTO friends
 //dump the result object
 //var_dump($result);
 }
-}
+}*/
 $result = pg_query($dbconn, "select title, imbdrating from friends where imbdrating = 8.5")
 or die("Error in query: $result." . pg_last_error($dbconn));
 	
