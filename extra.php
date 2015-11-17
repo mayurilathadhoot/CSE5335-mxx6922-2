@@ -11,7 +11,7 @@ header('Content-Type: application/javascript;');
 echo "Please enter imbdid : ";
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
-if(trim($line) = '$imbdid')
+if(isset($line))
 {
 $result = pg_query($dbconn, "select title, imbdrating from friends where imbdrating = 8.5");	
 }
