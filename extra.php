@@ -13,7 +13,7 @@ $line = fgets($handle);
 $line = str_replace("\n", "", $line);
 $line = str_replace("\r", "", $line);
 $x="'".$line."'";
-
+if (!empty($result)){
 	$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x ");
 	if (!empty($result)){
 	while ($row = pg_fetch_row($result)){
@@ -21,7 +21,10 @@ $x="'".$line."'";
 	else{
 		echo " please enter a correct imbdid";
 	}
-
+}
+else{
+	echo "enter proper imbdid";
+}
 // Closing connection
 pg_close($dbconn);
 ?>
