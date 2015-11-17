@@ -1,5 +1,19 @@
 <?php
-$redis = new Predis_Client(getenv('redis://h:pfe2o6pqjl92sidbcgqbdtjaob5@ec2-54-83-59-218.compute-1.amazonaws.com:9969'));
+require "predis/autoload.php";
+Predis\Autoloader::register();
 
+try {
+	$redis = new PredisClient();
 
-?>
+	// This connection is for a remote server
+	/*
+		$redis = new PredisClient(array(
+		    "scheme" => "tcp",
+		    "host" => "153.202.124.2",
+		    "port" => 6379
+		));
+	*/
+}
+catch (Exception $e) {
+	die($e->getMessage());
+}
