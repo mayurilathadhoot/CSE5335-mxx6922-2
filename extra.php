@@ -13,7 +13,7 @@ $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
 if(isset($line))
 {
-$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid = '{$line}'");	
+$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid = {$line} ");	
 }
 else
 {
