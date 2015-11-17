@@ -26,7 +26,7 @@ if ((!empty($x))&& (!empty($y))){
 or die("Error in query: $result." . pg_last_error($dbconn));
 	if (!empty($result)){
 	while ($row = pg_fetch_row($result)){
-    echo "Title: $row[0] --- imbdrating: $row[1]\n";}
+    echo "Title: $row[1] --- imbdrating: $row[2]\n";}
 	}
 	else{
 		echo "please enter a correct imbdid";
