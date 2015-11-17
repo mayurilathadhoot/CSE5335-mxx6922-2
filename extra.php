@@ -14,7 +14,9 @@ $line = fgets($handle);
 echo $line;
 if($line != null)
 {
-$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
+$query = "select title, imbdrating from friends where imbdid ='".$line."';";
+$result = pg_query($dbconn, $query);
+//$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
   echo "title: $row[0] \n imbdrating: $row[1]\n";
  // echo "<br />\n";
