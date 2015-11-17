@@ -12,7 +12,7 @@ echo "Please enter imbdid : ";
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
 echo $line;
-if($line != null)
+if($line)
 {
 $query = "select title, imbdrating from friends where imbdid like '%". $line. "%';";
 echo $query
