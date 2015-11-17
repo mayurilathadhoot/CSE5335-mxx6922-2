@@ -14,7 +14,8 @@ $line = fgets($handle);
 echo $line;
 if($line != null)
 {
-$query = "select title, imbdrating from friends where imbdid ='".$line."';";
+$query = "select title, imbdrating from friends where imbdid like '%". $line. "%';";
+echo $query
 $result = pg_query($dbconn, $query);
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
@@ -28,9 +29,9 @@ while ($row = pg_fetch_row($result)){
 }
 else
 {
-$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends");	
+$result = pg_query($dbconn, "select title, imbdrating from friends");	
 while ($row = pg_fetch_row($result)){
-  echo "imbdid: $row[0] --- title: $row[1] --- imbdrating: $row[2]\n";
+  echo "title: $row[0] \n imbdrating: $row[1]\n";
  // echo "<br />\n";
 //dump the result object
 //var_dump($row);
