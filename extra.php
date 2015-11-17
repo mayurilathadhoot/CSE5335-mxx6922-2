@@ -8,9 +8,9 @@ $dbconn = pg_connect("host=ec2-107-21-223-147.compute-1.amazonaws.com dbname=d43
 header('Content-Type: application/javascript;');
 
 parse_str(implode('&', array_slice($argv, 1)), $_GET);
-if (isset($_GET['imbdid']))
+if (isset($_GET[imbdid]))
 {
-$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends where imbdid = $_GET['imbdid']")	;
+$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends where imbdid = $_GET[imbdid]")	;
 }
 else
 {
