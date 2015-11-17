@@ -21,7 +21,7 @@ if($x)
 //);  
 //echo $query;
 
-$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = '$x'");
+$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x");
 
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
