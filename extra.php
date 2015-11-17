@@ -21,6 +21,7 @@ $sql = sprintf(
 //echo $query;
 
 $result = pg_query($dbconn, "select title, imbdrating from friends where imbdid = '{$line}'");
+
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
   echo "title: $row[1] \n imbdrating: $row[2]\n";
@@ -34,6 +35,7 @@ while ($row = pg_fetch_row($result)){
 else
 {
 $result = pg_query($dbconn, "select title, imbdrating from friends");	
+}
 while ($row = pg_fetch_row($result)){
   echo "title: $row[0] \n imbdrating: $row[1]\n";
  // echo "<br />\n";
@@ -41,7 +43,7 @@ while ($row = pg_fetch_row($result)){
 //var_dump($row);
 
 
-}}
+}
 
 
 
