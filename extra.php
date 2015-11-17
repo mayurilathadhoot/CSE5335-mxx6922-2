@@ -21,7 +21,7 @@ $sql = sprintf(
 );  
 //echo $query;
 
-$result = pg_query($dbconn, "SELECT * FROM friends WHERE imdbid = '".$line."'");
+$result = pg_query($dbconn, "SELECT * FROM friends WHERE imbdid = '".$line."'");
 
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
@@ -33,7 +33,7 @@ while ($row = pg_fetch_row($result)){
 
 }
 }
-else
+else 
 {
 $result = pg_query($dbconn, "select title, imbdrating from friends");	
 while ($row = pg_fetch_row($result)){
