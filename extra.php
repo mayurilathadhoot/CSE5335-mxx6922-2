@@ -10,11 +10,11 @@ header('Content-Type: application/javascript;');
 parse_str(implode('&', array_slice($argv, 1)), $_GET);
 if (isset($_GET['imbdid']))
 {
-$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends where imbdid = $_GET['imbdid']")	
+$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends where imbdid = $_GET['imbdid']")	;
 }
 else
 {
-$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends")
+$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends");
 }
 	
 while ($row = pg_fetch_row($result)){
