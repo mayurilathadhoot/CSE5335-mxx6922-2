@@ -6,7 +6,7 @@ $dbconn = pg_connect("host=ec2-107-21-223-147.compute-1.amazonaws.com dbname=d43
 		
 header('Content-Type: application/javascript;');
 
-echo "Please enter imbdid : ";
+echo "Please enter the exact imbdid : ";
 
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
@@ -16,8 +16,12 @@ $x="'".$line."'";
 if($x)
 {
 	$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x ");
+	if (!empty($result)){
 	while ($row = pg_fetch_row($result)){
-    echo "Title: $row[0] --- imbdrating: $row[1]\n";}
+    echo "Title: $row[0] --- imbdrating: $row[1]\n";}}
+	else{
+		echo " please enter a correct imbdid";
+	}
 }
 // Closing connection
 pg_close($dbconn);
