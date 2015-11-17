@@ -14,10 +14,10 @@ $line = str_replace("\n", "", $line);
 $line = str_replace("\r", "", $line);
 $x="'".$line."'";
 if (!empty($x)){
-	$result = pg_query($dbconn, "SELECT title, imbdrating FROM friends WHERE imbdid = $x ");
+	$result = pg_query($dbconn, "SELECT imbdid, title, imbdrating FROM friends WHERE imbdid = $x ");
 	if (!empty($result)){
 	while ($row = pg_fetch_row($result)){
-    echo "Title: $row[0] --- imbdrating: $row[1]\n";}
+    echo "imbdid: $row[0] --- Title: $row[1] --- imbdrating: $row[2]\n";}
 	}
 	else{
 		echo "please enter a correct imbdid";
