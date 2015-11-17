@@ -16,8 +16,7 @@ if($line)
 {
 //$query = "select title, imbdrating from friends where imbdid = '". $line. "';";
 $sql = sprintf(
-   "SELECT title, imbdrating FROM friends WHERE imbdid = '%s'",
-   mysql_real_escape_string($line)
+   "SELECT title, imbdrating FROM friends WHERE imbdid = '%s'", $line
 );  
 //echo $query;
 $result = pg_query($dbconn, $sql);
