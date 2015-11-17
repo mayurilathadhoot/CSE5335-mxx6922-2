@@ -10,7 +10,9 @@ echo "Please enter imbdid : ";
 
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
-$x='"'.$line.'"';
+$line = str_replace("\n", "", $line);
+$line = str_replace("\r", "", $line);
+$x="'".$line."'";
 if($x)
 {
 	echo $x;
