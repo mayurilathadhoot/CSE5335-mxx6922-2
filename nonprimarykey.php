@@ -24,11 +24,11 @@ $y="'".$line1."'";
 if ((!empty($x))&& (!empty($y))){
 	$result = pg_query($dbconn, "select imbdid, title, imbdrating from friends where imbdrating between $x and $y ")
 or die("Error in query: $result." . pg_last_error($dbconn));
-
+for($i=o; $i<=20; $i++){
 	while ($row = pg_fetch_row($result)){
     echo "Title: $row[1] --- imbdrating: $row[2]\n";}
 	}
-	
+}	
 else{
 	echo "/n enter proper imbdid";
 }
