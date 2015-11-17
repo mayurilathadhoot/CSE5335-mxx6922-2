@@ -14,9 +14,13 @@ $line = fgets($handle);
 echo $line;
 if($line)
 {
-$query = "select title, imbdrating from friends where imbdid like '%". $line. "%';";
-echo $query;
-$result = pg_query($dbconn, $query);
+//$query = "select title, imbdrating from friends where imbdid = '". $line. "';";
+$sql = sprintf(
+   "SELECT title, imbdrating FROM friends WHERE imbdid = '%s'",
+   mysql_real_escape_string($line)
+);  
+//echo $query;
+$result = pg_query($dbconn, $sql);
 //$result = pg_query($dbconn, "select title, imbdrating from friends where imbdid =' ". $line. " '");	
 while ($row = pg_fetch_row($result)){
   echo "title: $row[0] \n imbdrating: $row[1]\n";
