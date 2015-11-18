@@ -1,0 +1,7 @@
+=== cse-mxx6922-2 Config Vars
+BUILDPACK_URL:   https://github.com/heroku/heroku-buildpack-php.git
+DATABASE_URL:    postgres://ywhsrpfxdaknkl:dnYTje6Tvi_vDyGq9Z1Qsf5yhY@ec2-107-21-223-147.compute-1.amazonaws.com:5432/d43brbvbt6ugl9
+LD_LIBRARY_PATH: /app/php/ext:/app/apache/lib
+MONGOLAB_URI:    mongodb://heroku_bb3t4334:88bbb7cpgigo7pv0pler7tqgu2@ds055584.mongolab.com:55584/heroku_bb3t4334
+REDISTOGO_URL:   redis://redistogo:9e0cf72b5eebaefd641aafeba3284d29@panga.redistogo.com:9749/
+REDIS_URL:       redis://h:pfe2o6pqjl92sidbcgqbdtjaob5@ec2-54-83-59-218.compute-1.amazonaws.com:9969
